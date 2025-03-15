@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+
+  <!-- Tab Icon -->
+  <link rel="icon" href="images/icon.png" type="image/x-icon">
+  <!-- Title of Web Page ( Appears in tab ) -->
+  <title>More Information</title>
+
+  <!-- Link to other files -->
+  <script src="components.js"></script>
+  <link href="components.css" rel="stylesheet" type="text/css" />
+
+  <link href="moreInfo/moreInfo.css" rel="stylesheet" type="text/css" />
+  <script src="moreInfo/moreInfo.js"></script>
+
+  <link href="helper/helper.css" rel="stylesheet" type="text/css" />
+  <script src="helper/helper.js"></script>
+
+  <link href="navBar/navBar.css" rel="stylesheet" type="text/css" />
+  <script src="navBar/navBar.js"></script>
+
+  <link href="footer/footer.css" rel="stylesheet" type="text/css" />
+  <script src="footer/footer.js"></script>
+
+  <!-- Link to data visualization files -->
+  <link href="chart/c3.css" rel="stylesheet" type="text/css" />
+  <script src="chart/c3.js"></script>
+  <script src="chart/d3.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Instrument+Sans">
+
+  <!-- JQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+
+<body onload="init();loadRedirect();loadBackgroundImage();addSelect();">
+  <!-- Navigation Bar -->
+  <div id="navbar" class="container">
+
+    <!-- Logo -->
+    <div id="logo" class="container flex" style="flex:0.5">
+      <a href="index.html">
+        <img src="images/Logo.png">
+      </a>
+    </div>
+
+    <!-- Navigation Elements -->
+    <div id="pages" class="container flex">
+
+      <!-- Home Navigation Element -->
+      <a href="index.html" id="homeNav" class="flex navElement">
+        <h5>
+          Home
+        </h5>
+      </a>
+
+      <!-- Information Navigation Element -->
+      
+      <a href="info.html" id="infoNav" class="flex navElement">
+        <h5>
+          Information
+        </h5>
+      </a>
+
+      <!-- Analysis Navigation Element -->
+      <a href="analysis.html" id="analysisNav" class="flex navElement">
+        <h5>
+          Analysis
+        </h5>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Banner -->
+  <div id="banner" class="backgroundImage">
+    <h1 class="title">
+      More Information
+    </h1>
+    <hr>
+    <p class="desc">
+      The purpose of this page is to provide more specific information on an Incident.
+    </p>
+  </div>
+
+  <!-- Selection -->
+  <div id="moreInfo" class="container">
+
+    <!-- Filter for Incident Key -->
+    <div id="select" class="flex container">
+
+      <!-- Search for incident full information using text input  -->
+      <div id="textSelectDiv" class="container flex">
+        <h5 id="title">Search Incident Key by Text</h5>
+        <input class="flex" type="text" id="inputKey" placeholder="Enter Incident Key">
+        <br>
+        <input class="flex button" onclick="searchIncident('inputKey')" type="button" value="Search">
+      </div>
+
+      <!-- Search for incident full information using select input -->
+      <div id="selectSelectDiv" class="container flex">
+        <h5 id="title">Search Incident Key by Select</h5>
+        <select id="key" class="flex">
+        </select>
+        <br>
+        <input onclick='searchIncident("key")' class="flex button" type="button" value="Search">
+      </div>
+      
+    </div>
+
+    <!-- Output -->
+    <div id="output" class="flex container">
+
+      <!-- Title of Output (Incident Key) -->
+      <div id="outputTitle" class="flex"></div>
+
+      <!-- Incident Details -->
+      <div id="outputDetails" class="container flex">
+
+        <!-- Incident Description -->
+        <div id="outputDesc" class="container flex"></div>
+
+        <!-- Incident Map -->
+        <div id="outputMap" class="container flex"></div>
+      </div>
+      
+    </div>
+    
+  </div>
+  
+  <!-- Footer -->
+  <div id="footer" class="container">
+
+    <!-- Left Part of Footer -->
+    <div id="DatasetResources" class="flex container">
+
+      <!-- Dataset Resources Container -->
+      <div class="flex">
+
+        <!-- Title of Dataset Resources Container -->
+        <h5>Dataset Resources</h5>
+
+        <hr>
+
+        <!-- Dataset Resources Links -->
+        <a href="https://opendata.cityofnewyork.us/">
+          <p>NYC Open Data</p>
+        </a>
+
+        <a href="https://data.cityofnewyork.us/Public-Safety/NYPD-Shooting-Incident-Data-Historic-/833y-fsy8">
+          <p>NYPD Shooting Incident Data (Historic)</p>
+        </a>
+
+        <a href="https://data.cityofnewyork.us/Public-Safety/NYPD-Shooting-Incident-Data-Year-To-Date-/5ucz-vwe8">
+          <p>NYPD Shooting Incident Data (Year To Date)</p>
+        </a>
+
+      </div>
+
+      <!-- Copyright -->
+      <h6>
+        Bayside High School. 2023 All Rights Reserved.
+      </h6>
+
+    </div>
+
+    <!-- Right Part of Footer -->
+    <div id="AdditionalResources" class="flex container">
+
+      <!-- Title of Additional Resources Container -->
+      <div class="flex">
+
+        <!-- Title of Additional Resources Container -->
+        <h5>Additional Resources</h5>
+
+        <hr>
+
+        <!-- Additional Resources Links -->
+        <a href="https://c3js.org">
+          <p>C3.js</p>
+        </a>
+
+        <a href="https://d3js.org">
+          <p>D3.js</p>
+        </a>
+
+        <a href="https://developer.mapquest.com">
+          <p>MapQuest Developer</p>
+        </a>
+
+      </div>
+
+    </div>
+</body>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+
+  <!-- Tab Icon -->
+  <link rel="icon" href="images/icon.png" type="image/x-icon">
+  <!-- Title of Web Page ( Appears in tab ) -->
+  <title>Information</title>
+
+  <!-- Link to other files -->
+  <script src="components.js"></script>
+  <link href="components.css" rel="stylesheet" type="text/css" />
+
+  <link href="info/info.css" rel="stylesheet" type="text/css" />
+  <script src="info/info.js"></script>
+
+  <link href="helper/helper.css" rel="stylesheet" type="text/css" />
+  <script src="helper/helper.js"></script>
+
+  <link href="navBar/navBar.css" rel="stylesheet" type="text/css" />
+  <script src="navBar/navBar.js"></script>
+
+  <link href="footer/footer.css" rel="stylesheet" type="text/css" />
+  <script src="footer/footer.js"></script>
+
+  <!-- Link to data visualization files -->
+  <link href="chart/c3.css" rel="stylesheet" type="text/css" />
+  <script src="chart/c3.js"></script>
+  <script src="chart/d3.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Instrument+Sans">
+
+  <!-- JQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+</head>
+
+<body onload="init();loadBackgroundImage();infoInit()">
+  <!-- Navigation Bar -->
+  <div id="navbar" class="container">
+
+    <!-- Logo -->
+    <div id="logo" class="container flex" style="flex:0.5">
+      <a href="index.html">
+        <img src="images/Logo.png">
+      </a>
+    </div>
+
+    <!-- Navigation Elements -->
+    <div id="pages" class="container flex">
+
+      <!-- Home Navigation Element -->
+      <a href="index.html" id="homeNav" class="flex navElement">
+        <h5>
+          Home
+        </h5>
+      </a>
+
+      <!-- Information Navigation Element -->
+      <a href="info.html" id="infoNav" class="flex navElement">
+        <h5>
+          Information
+        </h5>
+      </a>
+
+      <!-- Analysis Navigation Element -->
+      <a href="analysis.html" id="analysisNav" class="flex navElement">
+        <h5>
+          Analysis
+        </h5>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Banner -->
+  <div id="banner" class="backgroundImage">
+    <h1 class="title">
+      Information
+    </h1>
+    <hr>
+    <p class="desc">
+      The purpose of this page is to display all the shooting incidents throughout the boroughs of NYC. It gives you
+      information about all the shooting incidents.
+      <br>
+      For example, it gives you the case number, gives you where the
+      shooting incident happened, the date of when it happened, and the time when it happened.
+      <br>
+      For more information on a specific incident : <a href="moreInfo.html" class="link">More Information</a>
+    </p>
+  </div>
+
+  <!-- Information -->
+  <div id="info" class="container backgroundImage">
+    
+    <!-- Selection -->
+    <div id="filter" style="flex:0.25" class="container">
+      
+      <!-- Choose Dataset -->
+      <div id="dataSetChoice" class="container flex">
+        <h5 id="title">
+          Filter by Dataset
+        </h5>
+        <select id="datasetSelect">
+          <option value="undefined">Select Dataset</option>
+          <option value="d1">2006 - Last Year (Dataset 1)</option>
+          <option value="d2">This Year (Dataset 2)</option>
+          <option value="cd">2006 - This Year (Combined Dataset)</option>
+        </select>
+        <br>
+
+        <!-- Cards the entire Dataset -->
+        <input type="button" class="button" value="Filter Dataset" onclick="filterByDataset()">
+      </div>
+
+      <!-- Choose Key -->
+      <div id="keysChoice" class="container flex">
+        <h5 id="title">
+          Add Key Values
+        </h5>
+        <select id="keys">
+          <option value="undefined">Select Key</option>
+          <option value="occur_date">Date</option>
+          <option value="occur_time">Time</option>
+          <option value="boro">Borough</option>
+          <option value="precinct">Precinct</option>
+          <option value="vic_age_group">Victim Age Group</option>
+          <option value="vic_sex">Victim Gender</option>
+          <option value="vic_race">Victim Race</option>
+        </select>
+        <br>
+
+        <!-- Add Key Values -->
+        <input type="button" class="button" value="Add Key Values" onclick="AddKeyValues()">
+      </div>
+
+      <!-- Choose Key Value -->
+      <div id="valueChoices" class="container flex">
+        <h5 id="title">
+          Filter by Key Value
+        </h5>
+        <select id="keysValue">
+          <option value="undefined">Select Key Value</option>
+        </select>
+        <br>
+
+        <!-- Filter dataset chosen and cards the filtered Dataset -->
+        <input type="button" class="button" value="Filter by Key Values" onclick="filterByKeyValues()">
+      </div>
+      
+    </div>
+
+    <!-- Output -->
+    <div id="outputDiv" class="container flex">
+
+      <!-- Count the number of cards -->
+      <div id="outputNumber" class="container">
+      </div>
+
+      <!-- Cards Output -->
+      <div id="output" class="container flex">
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer" class="container">
+
+    <!-- Left Part of Footer -->
+    <div id="DatasetResources" class="flex container">
+
+      <!-- Dataset Resources Container -->
+      <div class="flex">
+
+        <!-- Title of Dataset Resources Container -->
+        <h5>Dataset Resources</h5>
+
+        <hr>
+
+        <!-- Dataset Resources Links -->
+        <a href="https://opendata.cityofnewyork.us/">
+          <p>NYC Open Data</p>
+        </a>
+
+        <a href="https://data.cityofnewyork.us/Public-Safety/NYPD-Shooting-Incident-Data-Historic-/833y-fsy8">
+          <p>NYPD Shooting Incident Data (Historic)</p>
+        </a>
+
+        <a href="https://data.cityofnewyork.us/Public-Safety/NYPD-Shooting-Incident-Data-Year-To-Date-/5ucz-vwe8">
+          <p>NYPD Shooting Incident Data (Year To Date)</p>
+        </a>
+
+      </div>
+
+      <!-- Copyright -->
+      <h6>
+        Bayside High School. 2023 All Rights Reserved.
+      </h6>
+
+    </div>
+
+    <!-- Right Part of Footer -->
+    <div id="AdditionalResources" class="flex container">
+
+      <!-- Title of Additional Resources Container -->
+      <div class="flex">
+
+        <!-- Title of Additional Resources Container -->
+        <h5>Additional Resources</h5>
+
+        <hr>
+
+        <!-- Additional Resources Links -->
+        <a href="https://c3js.org">
+          <p>C3.js</p>
+        </a>
+
+        <a href="https://d3js.org">
+          <p>D3.js</p>
+        </a>
+
+        <a href="https://developer.mapquest.com">
+          <p>MapQuest Developer</p>
+        </a>
+
+      </div>
+
+    </div>
+</body>

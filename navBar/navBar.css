@@ -1,0 +1,48 @@
+#navbar {
+  flex-direction: row;
+  text-align: center;
+  position: sticky;
+  top:0px;
+  z-index: 1;
+}
+
+#navbar div a h5 {
+  color: #ffffff;
+  font-size: 20px;
+  font-family: "Montserrat";
+}
+
+a {
+  text-decoration: none;
+}
+
+#logo {
+  background-color: rgb(133, 220, 186);
+  align-items: center;
+  justify-content: center;
+}
+
+#logo a img {
+  max-width: 250px;
+  width:auto;
+}
+
+.navElement {
+  background-color: rgb(133, 220, 186);
+  border-bottom: 5px solid rgb(133, 220, 186);
+  transition: 0.2s;
+}
+
+.navElement:hover {
+  background-color: rgba(133, 220, 186, 0.9);
+  border-bottom: 5px solid rgb(65, 189, 123);
+}
+
+
+#logo {
+  transition: 0.5s;
+}
+
+#logo:hover {
+  background-color: rgba(133, 220, 186, 0.9);
+}

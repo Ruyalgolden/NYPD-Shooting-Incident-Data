@@ -1,0 +1,98 @@
+#banner {
+  padding:25px;
+}
+.link {
+  color:white;
+  text-decoration: underline;
+}
+.title {
+  transition:0.5s;
+  color:white;
+  text-align:center;
+  font-size:50px;
+  font-family: "Instrument Sans";
+}
+.title:hover{
+  transform: scale(1.05);
+}
+.desc {
+  color:white;
+  text-align:center;
+  font-size:25px;
+  font-family: "Instrument Sans";
+  padding:25px;
+}
+.desc:hover{
+   transform: scale(1.05);
+}
+#info {
+  height:750px;
+  flex-direction: row;
+}
+#filter {
+  flex-direction: column;
+  margin:20px;
+  background-color: rgba(195, 141, 158, 0.4);
+  border-radius: 20px;
+  align-items: center;
+}
+
+#title {
+  color:white;
+  text-align:center;
+  font-family: "Instrument Sans";
+  font-size: 35px;
+  margin:20px;
+}
+/* https://moderncss.dev/custom-select-styles-with-pure-css/ */
+select {
+  width: 350px;
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #fff;
+  appearance: none;
+  text-align:center;
+  margin-left:50px;
+  margin-right:50px;
+}
+#outputNumber {
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255,255,255,0.6);
+  border-radius: 20px;
+  margin-top: 40px;
+  margin-left: 50px;
+  margin-right:50px;
+  height: 30px;
+  padding:10px;
+}
+#outputDiv {
+  flex-direction: column;
+  justify-content: center;
+}
+#output {
+  justify-content: center;
+  overflow:scroll;
+  flex-direction: row;
+  flex-wrap: wrap;
+  border-radius: 10px;
+  border: 4px solid rgba(255,255,255,0.6);
+  margin:50px;
+  margin-top:10px;
+  overflow-x: hidden; /* Hide horizontal scrollbar */
+}
+#dataSetChoice {
+  flex-direction: column;
+  align-items: center;
+}
+#keysChoice {
+  flex-direction: column;
+  align-items: center;
+}
+#valueChoices {
+  flex-direction: column;
+  align-items: center;
+}

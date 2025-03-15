@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+
+  <!-- Tab Icon -->
+  <link rel="icon" href="images/icon.png" type="image/x-icon">
+
+  <!-- Title of Web Page ( Appears in tab ) -->
+  <title>NYPD Shooting Incident Data</title>
+
+  <!-- Link to other files -->
+  <script src="components.js"></script>
+  <link href="components.css" rel="stylesheet" type="text/css" />
+
+  <link href="homepage/homepage.css" rel="stylesheet" type="text/css" />
+  <script src="homepage/homepage.js"></script>
+
+  <link href="helper/helper.css" rel="stylesheet" type="text/css" />
+  <script src="helper/helper.js"></script>
+
+  <link href="navBar/navBar.css" rel="stylesheet" type="text/css" />
+  <script src="navBar/navBar.js"></script>
+
+  <link href="footer/footer.css" rel="stylesheet" type="text/css" />
+  <script src="footer/footer.js"></script>
+
+  <!-- Link to data visualization files -->
+  <link href="chart/c3.css" rel="stylesheet" type="text/css" />
+  <script src="chart/c3.js"></script>
+  <script src="chart/d3.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat|Instrument+Sans">
+
+  <!-- JQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+</head>
+
+<!-- Body -->
+
+<body
+  onload="loadBackgroundImage();init();typeWriter();exampleSet('sampleOutputInformation');exampleGraph('sampleOutputAnalysis')">
+
+  <!-- Navigation Bar -->
+  <div id="navbar" class="container">
+
+    <!-- Logo -->
+    <div id="logo" class="container flex" style="flex:0.5">
+      <a href="index.html">
+        <img src="images/Logo.png">
+      </a>
+    </div>
+
+    <!-- Navigation Elements -->
+    <div id="pages" class="container flex">
+
+      <!-- Home Navigation Element -->
+      <a href="index.html" id="homeNav" class="flex navElement">
+        <h5>
+          Home
+        </h5>
+      </a>
+
+      <!-- Information Navigation Element -->
+      <a href="info.html" id="infoNav" class="flex navElement">
+        <h5>
+          Information
+        </h5>
+      </a>
+
+      <!-- Analysis Navigation Element -->
+      <a href="analysis.html" id="analysisNav" class="flex navElement">
+        <h5>
+          Analysis
+        </h5>
+      </a>
+
+    </div>
+
+  </div>
+
+  <!-- Banner -->
+  <div id="banner" class="backgroundImage">
+
+
+    <!-- Title of Banner -->
+    <h1 class="title">
+      NYPD Shooting Incident Data
+    </h1>
+
+    <hr>
+
+    <!-- Description of Banner -->
+    <p class="desc">
+      <span id="titleDesc" onload='typeWriter()'></span>
+      <br><br>
+      All datasets used are provided by
+
+      <!-- Link to NYC Open Data for Banner Description -->
+      <a href="https://opendata.cityofnewyork.us/" id="link" target="_blank">
+        Open Data
+      </a>
+
+    </p>
+
+  </div>
+
+
+
+  <!-- Dataset Banner -->
+  <div id="dataSetBanner" class="backgroundImage">
+
+    <!-- Title of Dataset Banner -->
+    <h1 class="title">
+      Datasets
+    </h1>
+
+    <hr>
+
+    <!-- Description of Dataset Banner -->
+    <p class="datasetBannerDesc">
+      Since 1845, The NYPD also known as the New York City Police Department, is the Police Force which serves and
+      protects the boroughs of New York City. There are approximately 36,000 officers and 19,000 civilian employees. For
+      the past 25 years, the NYPD department has achieved an amazing decline in both violence and crime making certain
+      that New York has the lowest overall crime rate out of 25 large major cities.
+
+      <br><br>
+      The NYPD shooting incident data, is a list of every shooting incident that happened in New York, from 2006 all the
+      way to the present day. All the data is manually checked and reviewed by the Office of Management Analysis and
+      Planning, before being posted onto the list.
+
+    </p>
+
+  </div>
+
+  <!-- Info on First Dataset -->
+  <div id="dataSet1" class="container dataSet">
+
+    <!-- Left Side of First Dataset (Background Image applied from homepage/homepage.js) -->
+    <div id="dataSet1img" class="backgroundImage" style="flex:3">
+    </div>
+
+    <!-- Right Side of First Dataset -->
+    <div id="dataSet1desc" class="dataSetdesc">
+
+      <!-- Title of First Dataset -->
+      <a href="https://data.cityofnewyork.us/Public-Safety/NYPD-Shooting-Incident-Data-Historic-/833y-fsy8"
+        target="_blank">
+        <h3 id="dataSetTitle">NYPD Shooting Incident Data<br>(Historic)</h3>
+      </a>
+
+      <hr>
+
+      <!-- Description of First Dataset -->
+      <p class="Datasetdescp">
+        Data provided by the Police Department (NYPD) that breaks down every shooting incident that occurred in NYC from
+        2006 to the end of the previous calendar year.
+
+        <br><br>
+
+        Each record shows a shooting incident which includes information
+        about the event such as the location and time of occurrence. Some records include information about the
+        suspectand victim.
+
+      </p>
+
+    </div>
+
+  </div>
+
+  <!-- Info on Second DataSet -->
+  <div id="dataSet2" class="container dataSet">
+
+    <!-- Right Side of Second Dataset -->
+    <div id="dataSet2desc" class="dataSetdesc">
+
+      <!-- Title of Second Dataset -->
+      <a href="https://data.cityofnewyork.us/Public-Safety/NYPD-Shooting-Incident-Data-Year-To-Date-/5ucz-vwe8"
+        target="_blank">
+        <h3 id="dataSetTitle">NYPD Shooting Incident Data<br>(Year To Date)</h3>
+      </a>
+
+      <hr>
+
+      <!-- Description of Second Dataset -->
+      <p class="Datasetdescp2">
+        Data provided by the Police Department (NYPD) that breaks down every shooting incident that occurred in NYC this
+        current year.
+
+        <br><br>
+
+        Each record shows a shooting incident which includes information about the event, such as the
+        location and time of occurrence. Some records include information about the suspect and victim.
+
+      </p>
+
+    </div>
+
+    <!-- Right Side of Second Dataset (Background Image applied from homepage/homepage.js) -->
+    <div id="dataSet2img" class="backgroundImage" style="flex:3">
+    </div>
+
+  </div>
+
+  <div id="information" class="container">
+    <div class="flex">
+      <h1 id="infoTitle">
+        Pages
+      </h1>
+      <hr>
+      <!-- Description  -->
+    </div>
+    <div id="infoExample" class="container flex">
+
+      <!-- Information -->
+      <div class="flex container">
+        <div class="flex">
+          <h5 id="infoSubTitle">
+            Information
+          </h5>
+          <hr>
+          <p class="desc">
+            The purpose of this page is to display all the shooting incidents throughout the boroughs of NYC. It gives
+            you
+            information about all the shooting incidents.
+            <br>
+            For example, it gives you the case number, gives you where the
+            shooting incident happened, the date of when it happened, and the time when it happened.
+          </p>
+        </div>
+      </div>
+      <div id="sampleOutputInformation" class="container flex">
+
+      </div>
+    </div>
+    <div id="infoExample" class="container flex">
+
+      <!-- Analysis -->
+
+      <div id="sampleOutputAnalysis" class="container flex">
+
+      </div>
+      <div class="flex">
+        <h5 id="analysisSubTitle">
+          Analysis
+        </h5>
+        <hr>
+        <p class="desc">
+          This purpose of this page is the analyzation of this chart. The page allows the user to pick which dataset to
+          display as a graph and filter the data by a specific value.
+          <br>
+          The graph on the left uses both datasets and filters the dataset by borough. The graph shows the number of
+          shootings in each borough between 2006 to this current year.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer" class="container">
+
+    <!-- Left Part of Footer -->
+    <div id="DatasetResources" class="flex container">
+
+      <!-- Dataset Resources Container -->
+      <div class="flex">
+
+        <!-- Title of Dataset Resources Container -->
+        <h5>Dataset Resources</h5>
+
+        <hr>
+
+        <!-- Dataset Resources Links -->
+        <a href="https://opendata.cityofnewyork.us/">
+          <p>NYC Open Data</p>
+        </a>
+
+        <a href="https://data.cityofnewyork.us/Public-Safety/NYPD-Shooting-Incident-Data-Historic-/833y-fsy8">
+          <p>NYPD Shooting Incident Data (Historic)</p>
+        </a>
+
+        <a href="https://data.cityofnewyork.us/Public-Safety/NYPD-Shooting-Incident-Data-Year-To-Date-/5ucz-vwe8">
+          <p>NYPD Shooting Incident Data (Year To Date)</p>
+        </a>
+
+      </div>
+
+      <!-- Copyright -->
+      <h6>
+        Bayside High School. 2023 All Rights Reserved.
+      </h6>
+
+    </div>
+
+    <!-- Right Part of Footer -->
+    <div id="AdditionalResources" class="flex container">
+
+      <!-- Title of Additional Resources Container -->
+      <div class="flex">
+
+        <!-- Title of Additional Resources Container -->
+        <h5>Additional Resources</h5>
+
+        <hr>
+
+        <!-- Additional Resources Links -->
+        <a href="https://c3js.org">
+          <p>C3.js</p>
+        </a>
+
+        <a href="https://d3js.org">
+          <p>D3.js</p>
+        </a>
+
+        <a href="https://developer.mapquest.com">
+          <p>MapQuest Developer</p>
+        </a>
+
+      </div>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+#footer {
+  padding-left:10px;
+  padding-right:10px;
+  padding-top:20px;
+  flex-direction: row;
+  background-color: rgb(91, 149, 127);
+}
+#footer div {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+#footer div h5 {
+  color: #ffffff;
+  font-size: 20px;
+  font-family: "Montserrat";
+}
+#footer div h6 {
+  color: #ffffff;
+  font-size: 15px;
+  font-family: "Montserrat";
+}
+#footer div p {
+  color: #ffffff;
+  font-size: 15px;
+  font-family: "Montserrat";
+}
+#DatasetResources {
+  flex-direction: column;
+  margin:5px;
+}
+#DatasetResources div h5 {
+  margin:0px;
+}
+#AdditionalResources {
+  flex-direction: column;
+  margin:5px;
+}
+
+#AdditionalResources div h5 {
+  margin:0px;
+}

@@ -1,0 +1,98 @@
+#banner {
+  padding:25px;
+}
+.title {
+  transition:0.5s;
+  color:white;
+  text-align:center;
+  font-size:50px;
+  font-family: "Instrument Sans";
+}
+.desc {
+  color:white;
+  text-align:center;
+  font-size:25px;
+  font-family: "Instrument Sans";
+  padding:25px;
+}
+table {
+  padding:20px;
+}
+th {
+  padding:20px;
+}
+td {
+  padding:5px;
+}
+#analysisPart {
+  flex-direction: row;
+  padding:25px;
+}
+#filter {
+  flex-direction: column;
+  margin:20px;
+  background-color: rgba(195, 141, 158, 0.6);
+  border-radius: 20px;
+  align-items: center;
+  padding-bottom:25px;
+}
+#filterTitle {
+  color:white;
+  text-align:center;
+  font-family: "Instrument Sans";
+  font-size: 25px;
+  margin:20px;
+}
+/* https://moderncss.dev/custom-select-styles-with-pure-css/ */
+select {
+  width: 350px;
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+  font-size: 1.25rem;
+  cursor: pointer;
+  line-height: 1.1;
+  background-color: #fff;
+  appearance: none;
+  text-align:center;
+  margin-left:50px;
+  margin-right:50px;
+}
+
+#datasetSelectDiv {
+  flex-direction: column;
+  align-items: center;
+}
+#keySelectDiv {
+  flex-direction: column;
+  align-items: center;
+}
+#outputDiv {
+  flex-direction: column;
+  align-items: center;
+}
+#keyValueDiv {
+  flex-direction: column;
+  align-items: center;
+}
+#chartDiv {
+  flex-direction: column;
+  align-items: center;
+}
+#infoChart {
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(195, 141, 158, 0.6);
+  border-radius: 20px;
+}
+#chartDisplay {
+  background-color: rgba(195, 141, 158, 0.6);
+  border-radius: 20px;
+  flex-direction: column;
+  align-items: center;
+}
+#chartEach {
+  background-color: rgba(195, 141, 158, 0.6);
+  border-radius: 20px;
+  flex-direction: column;
+  align-items: center;
+}
