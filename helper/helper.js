@@ -97,13 +97,21 @@ function filter(data, key, value) {
   return filtered;
 }
 
-// Gets an image of Location using MapQuest
-function showLocation(lat, lon){
-  mapKey = "qJDl3KXQM8HVbVQViht4Z8lgueeMzj8k";
-  
-  let map = `https://www.mapquestapi.com/staticmap/v5/map?center=${lat},${lon}&zoom=14&size=@2x&key=${mapKey}`;
+function showMap(lat, lon){
+  if (map) {
+    map.remove();
+  }
+
+  let map = L.map("map").setView([lat, lon], 14);
+  const tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 18,
+    attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>"
+  }).addTo(map);
+
+  let marker = L.marker(location).addTo(map);// ******** places marker on map
   return`<img class="map" src="${map}">`;
-}
+} 
+
 
 // Create chart function using c3.js
 function displayChart( data, chart_id, chart_type ){
