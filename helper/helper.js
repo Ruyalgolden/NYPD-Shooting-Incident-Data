@@ -1,5 +1,6 @@
 // Global variables
 let data1, data2, dataCombine;
+let map = undefined;
 
 // Function to get the element by Id
 function get(id) {
