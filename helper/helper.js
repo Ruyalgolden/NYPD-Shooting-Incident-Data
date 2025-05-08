@@ -99,7 +99,16 @@ function filter(data, key, value) {
 let map = undefined;
 
 function showMap(lat, lon){
-  let map = L.map("outputMap").setView([lat, lon], 14);
+  let map = L.map("backMap").setView([lat, lon], 14);
+  const tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    maxZoom: 18,
+    attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>"
+  }).addTo(map);
+
+  let marker = L.marker(location).addTo(map);
+
+  
+  let map = L.map("frontMap").setView([lat, lon], 14);
   const tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 18,
     attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>"
