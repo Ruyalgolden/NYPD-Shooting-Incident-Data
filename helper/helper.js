@@ -1,6 +1,5 @@
 // Global variables
 let data1, data2, dataCombine;
-let map = undefined;
 
 // Function to get the element by Id
 function get(id) {
@@ -99,10 +98,6 @@ function filter(data, key, value) {
 }
 
 function showMap(lat, lon){
-  if (map) {
-    map.remove();
-  }
-
   let map = L.map("map").setView([lat, lon], 14);
   const tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 18,
