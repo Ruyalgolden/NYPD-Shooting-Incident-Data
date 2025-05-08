@@ -108,13 +108,13 @@ function showMap(lat, lon){
   let marker = L.marker(location).addTo(map);
 
   
-  map = L.map("frontMap").setView([lat, lon], 14);
+  let map2 = L.map("frontMap").setView([lat, lon], 14);
   const tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 18,
     attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>"
-  }).addTo(map);
+  }).addTo(map2);
 
-  marker = L.marker(location).addTo(map);
+  let marker2 = L.marker(location).addTo(map2);
 } 
 
 
