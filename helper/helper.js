@@ -109,7 +109,7 @@ function showMap(lat, lon){
 
   
   let map2 = L.map("frontMap").setView([lat, lon], 14);
-  const tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  const tiles2 = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 18,
     attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>"
   }).addTo(map2);
