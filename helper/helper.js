@@ -99,7 +99,7 @@ function filter(data, key, value) {
 let map = undefined;
 
 function showMap(location){
-  let map = L.map("backMap").setView(location, 14);
+  let map = L.map("outputMap").setView(location, 14);
   const tiles = L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
     maxZoom: 18,
     attribution: "&copy; <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a>"
