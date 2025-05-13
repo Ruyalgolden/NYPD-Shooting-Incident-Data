@@ -114,8 +114,6 @@ function createFullCard(incident) {
   perpDesc.render("perpDesc");
 
   // Map Modal
-  let modal = new Modal(`<div id="frontMap"></div>`, `<div id="backMap"></div>`);
-  modal.render("outputMap");
   showMap([incident.latitude, incident.longitude]);
 }
 
